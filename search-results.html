@@ -1,3 +1,4 @@
+<!-- search-results.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,109 +57,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
-        }
-
-        /* Header styles */
-        header {
-            background-color: var(--medium-blue);
-            padding: 15px 0;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            width: 100%;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--accent);
-        }
-
-        .logo img {
-            height: 40px;
-        }
-
-        .logo span {
-            font-size: 1.2rem;
-            font-weight: bold;
-            white-space: nowrap;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        .mobile-toggle {
-            display: none;
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--text);
-        }
-
-        /* Nav search specific to search-results.html */
-        .nav-search {
-            position: relative;
-            display: flex;
-            margin-left: 20px;
-        }
-
-        .nav-search input {
-            padding: 8px 15px;
-            border: none;
-            border-radius: 25px 0 0 25px;
-            background-color: #ECF0F1;
-            color: #2C3E50;
-            width: 200px;
-        }
-
-        .nav-search input:focus {
-            outline: none;
-        }
-
-        .nav-search button {
-            padding: 8px 15px;
-            background-color: var(--accent);
-            color: var(--text);
-            border: none;
-            border-radius: 0 25px 25px 0;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .nav-search button:hover {
-            background-color: #2980B9;
         }
 
         /* Main content */
@@ -338,75 +236,6 @@
             color: var(--accent);
         }
 
-        /* Search dropdown */
-        .search-dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background-color: white;
-            border-radius: 0 0 10px 10px;
-            box-shadow: var(--shadow);
-            z-index: 100;
-            max-height: 400px;
-            overflow-y: auto;
-            color: #2C3E50;
-        }
-
-        .dropdown-category {
-            padding: 10px 0;
-            border-bottom: 1px solid #ECF0F1;
-        }
-
-        .category-title {
-            padding: 5px 15px;
-            font-weight: bold;
-            color: var(--accent);
-            background-color: #ECF0F1;
-        }
-
-        .dropdown-item {
-            padding: 8px 15px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .dropdown-item:hover,
-        .dropdown-item.selected {
-            background-color: #ECF0F1;
-        }
-
-        .dropdown-item .item-icon {
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .dropdown-item .category-badge {
-            font-size: 0.7rem;
-            padding: 2px 8px;
-            border-radius: 10px;
-            color: white;
-        }
-
-        .dropdown-item .search-icon {
-            font-size: 1.2rem;
-        }
-
-        .see-all,
-        .search-all {
-            font-style: italic;
-            background-color: #F5F5F5;
-        }
-
-        .no-results {
-            font-style: italic;
-            color: var(--light-gray);
-        }
-
         /* Contact info */
         .contact-info {
             padding: 20px 15px;
@@ -425,63 +254,7 @@
         }
 
         /* Responsive styles */
-        @media (max-width: 900px) {
-            .nav-search input {
-                width: 150px;
-            }
-        }
-
         @media (max-width: 768px) {
-            .mobile-toggle {
-                display: block;
-            }
-
-            .header-right {
-                position: absolute;
-                top: 60px;
-                left: 0;
-                right: 0;
-                background-color: var(--medium-blue);
-                flex-direction: column;
-                padding: 0;
-                height: 0;
-                overflow: hidden;
-                transition: height 0.3s ease;
-                z-index: 99;
-                width: 100%;
-            }
-
-            .header-right.active {
-                height: auto;
-                padding: 20px;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-            }
-
-            nav ul {
-                flex-direction: column;
-                width: 100%;
-                gap: 10px;
-                align-items: center; /* Center navigation items */
-                text-align: center;
-            }
-            
-            nav li {
-                width: 100%;
-                text-align: center;
-            }
-            
-            nav a {
-                display: block;
-                padding: 10px;
-                width: 100%;
-            }
-
-            .nav-search {
-                width: 100%;
-                margin-top: 15px;
-                margin-left: 0;
-            }
-
             .operator-results,
             .story-results {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -491,29 +264,6 @@
         @media (max-width: 480px) {
             .container {
                 padding: 0 10px;
-            }
-
-            .logo span {
-                font-size: 1rem;
-            }
-
-            .logo img {
-                height: 30px;
-            }
-
-            .nav-search {
-                flex-direction: column;
-            }
-
-            .nav-search input {
-                width: 100%;
-                border-radius: 25px;
-                margin-bottom: 10px;
-            }
-
-            .nav-search button {
-                width: 100%;
-                border-radius: 25px;
             }
 
             .operator-results {
@@ -528,28 +278,8 @@
 </head>
 
 <body>
-    <header>
-        <div class="container header-content">
-            <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Arknights Logo">
-                <span>Character Appearance Tracker</span>
-            </a>
-            <button class="mobile-toggle">☰</button>
-            <div class="header-right">
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="storylist.html">Stories</a></li>
-                        <li><a href="operatorlist.html">Characters</a></li>
-                    </ul>
-                </nav>
-                <div class="nav-search">
-                    <input type="text" placeholder="Search..." id="navSearch">
-                    <button>Search</button>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- Header will be inserted by navbar.js -->
+    <div id="header-container"></div>
 
     <main class="container">
         <div class="search-header">
@@ -570,19 +300,9 @@
 
     <div class="contact-info">
         <!-- <p>Site is currently a WIP!</p> -->
-        <!-- <p>Contact me on <a href="https://bsky.app/profile/wkwkeigh.bsky.social" target="_blank">Bluesky</a> or <a
+        <!-- <p>Contact me on <a href="https://bsky.app/profile/wkwkeigh.bsky.social" target="_blank">Bluesky</a> or 
                 href="https://twitter.com/wkwkeigh" target="_blank">Twitter</a> if there are any mistakes</p> -->
     </div>
-
-    <script>
-        // Mobile menu toggle
-        const mobileToggle = document.querySelector('.mobile-toggle');
-        const headerRight = document.querySelector('.header-right');
-
-        mobileToggle.addEventListener('click', () => {
-            headerRight.classList.toggle('active');
-        });
-    </script>
 
     <script src="data/operators.js"></script>
     <script src="data/mainStories.js"></script>
@@ -590,6 +310,7 @@
     <script src="data/vignettes.js"></script>
     <script src="data/oprecords.js"></script>
     <script src="data/arknightsData.js"></script>
+    <script src="js/navbar.js"></script>
     <script src="js/search.js"></script>
     <script src="js/search-results.js"></script>
 </body>
