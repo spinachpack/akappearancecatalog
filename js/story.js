@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const story = window.arknightsData.stories.find(s => s.id === selectedStoryId);
         
         if (story) {
-            document.title = `${story.name} - Arknights Operator Appearance Tracker`;
+            document.title = `${story.name} - Arknights Story Appearance Index`;
             document.querySelector('.story-header h1').textContent = story.name;
             document.querySelector('.story-header .meta').textContent = getCategoryDisplay(story.category);
             

@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="container header-content">
             <a href="index.html" class="logo">
                 <img src="images/logo.png" alt="Arknights Logo">
-                <span>Character Appearance Tracker</span>
+                <span>Story Appearance Index</span>
             </a>
             <button class="mobile-toggle">☰</button>
             <div class="header-right">

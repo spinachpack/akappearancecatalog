@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('operatorAvatar').alt = operator.name;
     document.getElementById('operatorName').textContent = operator.name;
     
-    document.title = `${operator.name} - Arknights Operator Appearance Tracker`;
+    document.title = `${operator.name} - Arknights Story Appearance Index`;
     
     const mainStories = [];
     const sideStories = [];
