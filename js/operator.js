@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title.addEventListener('click', () => {
                 const storyId = title.getAttribute('data-story-id');
                 localStorage.setItem('selectedStoryId', storyId);
-                window.location.href = 'story.html';
+                window.location.href = 'story';
             });
         });
     }
