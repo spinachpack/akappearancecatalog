@@ -1,7 +1,7 @@
 // vignettes.js
 const operatorRecords = [
     {
-      id: "amiyiiii-records",
+      id: "enforcer-records",
       name: "Enforcer's Operator Record",
       category: "operator-record",
       url: "record-enforcer.html",
