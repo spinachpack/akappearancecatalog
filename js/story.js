@@ -197,7 +197,7 @@ function populateEpisodeTable(tbody, episodes, filterValue) {
 
 function createOperatorTag(operator) {
     const a = document.createElement('a');
-    a.href = `/character/${operator.id}`;
+    a.href = `character?id=${operator.id}`;
     a.className = 'operator-tag';
     
     // Add a class to distinguish playable vs non-playable operators
@@ -238,7 +238,7 @@ function setupNavigationButtons(currentStory) {
             const prevStory = sortedStories[currentIndex - 1];
             prevBtn.textContent = `${prevStory.name}`;
             // Update href to use query parameter
-            prevBtn.href = `/story/${prevStory.id}`;
+            prevBtn.href = `story?id=${prevStory.id}`;
             prevBtn.onclick = null; // Remove the onclick handler
         } else {
             prevBtn.style.visibility = 'hidden';
@@ -248,7 +248,7 @@ function setupNavigationButtons(currentStory) {
             const nextStory = sortedStories[currentIndex + 1];
             nextBtn.textContent = `${nextStory.name}`;
             // Update href to use query parameter
-            nextBtn.href = `/story/${nextStory.id}`;
+            nextBtn.href = `story?id=${nextStory.id}`;
             nextBtn.onclick = null; // Remove the onclick handler
         } else {
             nextBtn.style.visibility = 'hidden';

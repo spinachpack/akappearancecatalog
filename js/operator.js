@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const pathParts = window.location.pathname.split('/');
-    const operatorId = pathParts[pathParts.indexOf('character') + 1];
+    const urlParams = new URLSearchParams(window.location.search);
+    const operatorId = urlParams.get('id');
 
     if (!operatorId) {
         document.getElementById('operatorName').textContent = 'Operator Not Found';
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title.addEventListener('click', () => {
                 const storyId = title.getAttribute('data-story-id');
                 localStorage.setItem('selectedStoryId', storyId);
-                window.location.href = 'story';
+                window.location.href = 'story.html';
             });
         });
     }
