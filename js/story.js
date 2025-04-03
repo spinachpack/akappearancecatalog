@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Get storyId from URL query parameter instead of localStorage
     const urlParams = new URLSearchParams(window.location.search);
     const selectedStoryId = urlParams.get('id') || localStorage.getItem('selectedStoryId');
     
@@ -11,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.story-header h1').textContent = story.name;
             document.querySelector('.story-header .meta').textContent = getCategoryDisplay(story.category);
             
-            // Update URL if loaded from localStorage
             if (!urlParams.get('id') && selectedStoryId) {
                 const newUrl = `story?id=${selectedStoryId}`;
                 history.pushState({storyId: selectedStoryId}, story.name, newUrl);
@@ -54,7 +52,6 @@ function createFilterControls() {
     storyTable.parentNode.insertBefore(filterContainer, storyTable);
     
     filterSelect.addEventListener('change', function() {
-        // Get storyId from URL instead of localStorage
         const urlParams = new URLSearchParams(window.location.search);
         const selectedStoryId = urlParams.get('id');
         
@@ -100,29 +97,24 @@ function populateStageTable(tbody, stages, filterValue) {
     stages.forEach(stage => {
         const tr = document.createElement('tr');
         
-        // Stage code
         const tdCode = document.createElement('td');
         tdCode.textContent = stage.code;
         tr.appendChild(tdCode);
         
-        // Stage title
         const tdTitle = document.createElement('td');
         tdTitle.textContent = stage.title;
         tr.appendChild(tdTitle);
         
-        // Operators
         const tdOperators = document.createElement('td');
         const operatorList = document.createElement('div');
         operatorList.className = 'operator-list';
-        
-        // Find operator data and create tags based on filter
+
         if (stage.operators && stage.operators.length > 0) {
             const operatorsToDisplay = [];
             
             stage.operators.forEach(opId => {
                 const operator = window.arknightsData.operators.find(o => o.id === opId);
                 if (operator) {
-                    // Apply filtering based on playable status
                     if (filterValue === 'all' || 
                         (filterValue === 'playable' && operator.playable === true) || 
                         (filterValue === 'npc' && operator.playable === false)) {
@@ -200,7 +192,6 @@ function createOperatorTag(operator) {
     a.href = `character?id=${operator.id}`;
     a.className = 'operator-tag';
     
-    // Add a class to distinguish playable vs non-playable operators
     if (operator.playable) {
         a.classList.add('playable');
     } else {
@@ -237,9 +228,8 @@ function setupNavigationButtons(currentStory) {
         if (currentIndex > 0) {
             const prevStory = sortedStories[currentIndex - 1];
             prevBtn.textContent = `${prevStory.name}`;
-            // Update href to use query parameter
             prevBtn.href = `story?id=${prevStory.id}`;
-            prevBtn.onclick = null; // Remove the onclick handler
+            prevBtn.onclick = null;
         } else {
             prevBtn.style.visibility = 'hidden';
         }
@@ -247,9 +237,8 @@ function setupNavigationButtons(currentStory) {
         if (currentIndex < sortedStories.length - 1) {
             const nextStory = sortedStories[currentIndex + 1];
             nextBtn.textContent = `${nextStory.name}`;
-            // Update href to use query parameter
             nextBtn.href = `story?id=${nextStory.id}`;
-            nextBtn.onclick = null; // Remove the onclick handler
+            nextBtn.onclick = null;
         } else {
             nextBtn.style.visibility = 'hidden';
         }

@@ -384,7 +384,6 @@ function navigateDropdown(dropdownContainer, direction) {
     items[newIndex].scrollIntoView({ block: 'nearest' });
 }
 
-// Submit search query
 function submitSearch(query, filterType = '') {
     if (!query.trim()) return;
     let searchUrl = `search-results.html?q=${encodeURIComponent(query.trim())}`;
@@ -395,13 +394,10 @@ function submitSearch(query, filterType = '') {
     window.location.href = searchUrl;
 }
 
-// Make sure to reinitialize when window is fully loaded
 window.addEventListener('load', function() {
-    // Wait for a short delay after window load to ensure everything is rendered
     setTimeout(() => {
         initializeSearchElements();
     }, 300);
 });
 
-// Initialize search on load
 console.log("Search script loaded and waiting for DOM content");
