@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const operatorId = urlParams.get('id');
+    const pathParts = window.location.pathname.split('/');
+    const operatorId = pathParts[pathParts.indexOf('character') + 1];
 
     if (!operatorId) {
         document.getElementById('operatorName').textContent = 'Operator Not Found';
