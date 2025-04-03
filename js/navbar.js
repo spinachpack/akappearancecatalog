@@ -250,9 +250,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="header-right">
                 <nav>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="storylist.html">Stories</a></li>
-                        <li><a href="operatorlist.html">Characters</a></li>
+                        <li><a href="index">Home</a></li>
+                        <li><a href="storylist">Stories</a></li>
+                        <li><a href="operatorlist">Characters</a></li>
                     </ul>
                 </nav>
                 <div class="nav-search">
