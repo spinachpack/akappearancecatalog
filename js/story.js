@@ -1,3 +1,4 @@
+// story.js
 document.addEventListener('DOMContentLoaded', function() {
     const selectedStoryId = localStorage.getItem('selectedStoryId');
     

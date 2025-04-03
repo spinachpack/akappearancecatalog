@@ -221,7 +221,148 @@ const operators = [
     name: "Specter",
     image: "images/Specter_icon.webp",
     playable: true
-  }
+  },
+  {
+    id: "ddd",
+    name: "DDD",
+    image: "images/DDD_icon.webp",
+    playable: false
+  },
+  {
+    id: "ceylon",
+    name: "Ceylon",
+    image: "images/Ceylon_icon.webp",
+    playable: true
+  },
+  {
+    id: "blaze",
+    name: "Blaze",
+    image: "images/Blaze_icon.webp",
+    playable: true
+  },
+  {
+    id: "sora",
+    name: "Sora",
+    image: "images/Sora_icon.webp",
+    playable: true
+  },
+  {
+    id: "provence",
+    name: "Provece",
+    image: "images/Provence_icon.webp",
+    playable: true
+  },
+  {
+    id: "skyfire",
+    name: "Skyfire",
+    image: "images/Skyfire_icon.webp",
+    playable: true
+  },
+  {
+    id: "gummy",
+    name: "Gummy",
+    image: "images/Gummy_icon.webp",
+    playable: true
+  },
+  {
+    id: "schwarz",
+    name: "Schwarz",
+    image: "images/Schwarz_icon.webp",
+    playable: true
+  },
+  {
+    id: "eyja",
+    name: "Eyjafjalla",
+    image: "images/Eyjafjalla_icon.webp",
+    playable: true
+  },
+  {
+    id: "cronin",
+    name: "Cronin",
+    image: "images/Cronin_icon.webp",
+    playable: false
+  },
+  {
+    id: "ifrit",
+    name: "Ifrit",
+    image: "images/Ifrit_icon.webp",
+    playable: true
+  },
+  {
+    id: "herman",
+    name: "Herman",
+    image: "images/Herman_icon.webp",
+    playable: false
+  },
+  {
+    id: "alty",
+    name: "Alty",
+    image: "images/Alty_icon.webp",
+    playable: false
+  },
+  {
+    id: "elysium",
+    name: "Elysium",
+    image: "images/Elysium_icon.webp",
+    playable: true
+  },
+  {
+    id: "thorns",
+    name: "Thorns",
+    image: "images/Thorns_icon.webp",
+    playable: true
+  },
+  {
+    id: "aya",
+    name: "Aya",
+    image: "images/Aya_icon.webp",
+    playable: false
+  },
+  {
+    id: "frostaus",
+    name: "Frost",
+    image: "images/Frostaus_icon.png",
+    playable: false
+  },
+  {
+    id: "dan",
+    name: "Dan",
+    image: "images/Dan_icon.webp",
+    playable: false
+  },
+  {
+    id: "cutter",
+    name: "Cutter",
+    image: "images/Cutter_icon.webp",
+    playable: true
+  },
+  {
+    id: "beeswax",
+    name: "Beeswax",
+    image: "images/Beeswax_icon.webp",
+    playable: true
+  },
+  {
+    id: "emperor",
+    name: "Emperor",
+    image: "images/Emperor_icon.webp",
+    playable: false
+  },
+  {
+    id: "croissant",
+    name: "Croissant",
+    image: "images/Croissant_icon.webp",
+    playable: true
+  },
+  {
+    id: "m3",
+    name: "mon3tr",
+    image: "images/mon3tr_icon.webp",
+    playable: false
+  },
+
+
+
 
 
 ];
