@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const badgeClass = character.playable ? 'playable-badge' : 'npc-badge';
             
             const characterCard = `
-                <a href="character.html?id=${character.id}" class="character-link">
+                <a href="character?id=${character.id}" class="character-link">
                     <div class="character-card">
                         <span class="character-type-badge ${badgeClass}">${typeBadge}</span>
                         <div class="character-image-container">
