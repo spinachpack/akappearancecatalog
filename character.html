@@ -41,7 +41,11 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            visibility: hidden;
+            visibility: visible;
+        }
+
+        body.loaded {
+            visibility: visible;
         }
 
         .container {
@@ -232,7 +236,7 @@
             <!-- Will be populated by JavaScript -->
         </div>
     </main>
-    
+
     <script src="data/operators.js"></script>
     <script src="data/mainStories.js"></script>
     <script src="data/sideStories.js"></script>
