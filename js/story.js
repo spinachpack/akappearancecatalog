@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const selectedStoryId = localStorage.getItem('selectedStoryId');
+    // Get storyId from URL query parameter instead of localStorage
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedStoryId = urlParams.get('id') || localStorage.getItem('selectedStoryId');
     
     if (window.arknightsData && selectedStoryId) {
         const story = window.arknightsData.stories.find(s => s.id === selectedStoryId);
@@ -9,14 +11,17 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.story-header h1').textContent = story.name;
             document.querySelector('.story-header .meta').textContent = getCategoryDisplay(story.category);
             
+            // Update URL if loaded from localStorage
+            if (!urlParams.get('id') && selectedStoryId) {
+                const newUrl = `story?id=${selectedStoryId}`;
+                history.pushState({storyId: selectedStoryId}, story.name, newUrl);
+            }
+            
             createFilterControls();
-            
             populateTable(story);
-            
             setupNavigationButtons(story);
         }
     }
-    
 });
 
 function createFilterControls() {
@@ -34,7 +39,6 @@ function createFilterControls() {
         { value: 'playable', text: 'Playable Only' },
         { value: 'npc', text: 'NPCs Only' },
         { value: 'all', text: 'All Characters' }
-        
     ];
     
     options.forEach(option => {
@@ -50,7 +54,10 @@ function createFilterControls() {
     storyTable.parentNode.insertBefore(filterContainer, storyTable);
     
     filterSelect.addEventListener('change', function() {
-        const selectedStoryId = localStorage.getItem('selectedStoryId');
+        // Get storyId from URL instead of localStorage
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedStoryId = urlParams.get('id');
+        
         const story = window.arknightsData.stories.find(s => s.id === selectedStoryId);
         if (story) {
             populateTable(story);
@@ -190,7 +197,7 @@ function populateEpisodeTable(tbody, episodes, filterValue) {
 
 function createOperatorTag(operator) {
     const a = document.createElement('a');
-    a.href = `character.html?id=${operator.id}`;
+    a.href = `character?id=${operator.id}`;
     a.className = 'operator-tag';
     
     // Add a class to distinguish playable vs non-playable operators
@@ -230,11 +237,9 @@ function setupNavigationButtons(currentStory) {
         if (currentIndex > 0) {
             const prevStory = sortedStories[currentIndex - 1];
             prevBtn.textContent = `${prevStory.name}`;
-            prevBtn.href = "javascript:void(0)";
-            prevBtn.onclick = function() {
-                localStorage.setItem('selectedStoryId', prevStory.id);
-                window.location.reload();
-            };
+            // Update href to use query parameter
+            prevBtn.href = `story?id=${prevStory.id}`;
+            prevBtn.onclick = null; // Remove the onclick handler
         } else {
             prevBtn.style.visibility = 'hidden';
         }
@@ -242,11 +247,9 @@ function setupNavigationButtons(currentStory) {
         if (currentIndex < sortedStories.length - 1) {
             const nextStory = sortedStories[currentIndex + 1];
             nextBtn.textContent = `${nextStory.name}`;
-            nextBtn.href = "javascript:void(0)";
-            nextBtn.onclick = function() {
-                localStorage.setItem('selectedStoryId', nextStory.id);
-                window.location.reload();
-            };
+            // Update href to use query parameter
+            nextBtn.href = `story?id=${nextStory.id}`;
+            nextBtn.onclick = null; // Remove the onclick handler
         } else {
             nextBtn.style.visibility = 'hidden';
         }
