@@ -443,7 +443,68 @@ const operators = [
     name: "Keller",
     image: "images/Adele_icon.webp",
     playable: false
+  },
+  {
+    id: "capone",
+    name: "Capone",
+    image: "images/Capone_icon.webp",
+    playable: false
+  },
+  {
+    id: "gambino",
+    name: "Gambino",
+    image: "images/Gambino_icon.webp",
+    playable: false
+  },
+  {
+    id: "bison",
+    name: "Bison",
+    image: "images/Bison_icon.webp",
+    playable: true
+  },
+  {
+    id: "eurill",
+    name: "Eurill",
+    image: "images/Eurill_icon.webp",
+    playable: false
+  },
+  {
+    id: "rat",
+    name: "Rat King",
+    image: "images/Rat_icon.webp",
+    playable: false
+  },
+  {
+    id: "butler",
+    name: "Butler",
+    image: "images/Butler_icon.png",
+    playable: false
+  },
+  {
+    id: "waaifu",
+    name: "Waai fu",
+    image: "images/Waai_Fu_icon.webp",
+    playable: true
+  },
+  {
+    id: "lin",
+    name: "Lin",
+    image: "images/Lin_icon.webp",
+    playable: true
+  },
+  {
+    id: "yith",
+    name: "Yith",
+    image: "images/Yith_icon.webp",
+    playable: false
+  },
+  {
+    id: "lappland",
+    name: "Lappland",
+    image: "images/Lappland_icon.webp",
+    playable: true
   }
+
 
 
 

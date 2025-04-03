@@ -212,8 +212,100 @@ const sideStories = [
         code: "GA-ST-2",
         title: "Iris",
         operators: ["sciurus","yucatan","enforcer","mostima","fiametta","velliv","lemuen","mostima","oren","executor","cecelia","insider","andoain"]
+      }
+    ]
+  },
+  {
+    id: "code-brawl",
+      name: "Code of Brawl",
+      category: "side-story",
+      url: "story-codebrawl.html",
+      stages: [
+      {
+        code: " ",
+        title: "Prologue",
+        operators: ["capone","gambino","emperor"]
       },
-
+      {
+        code: "CB-1",
+        title: "6:44P.M.",
+        operators: ["butler","bison","exusiai","capone","croissant","emperor","texas","gambino"]
+      },
+      {
+        code: "CB-2",
+        title: "7:15P.M.",
+        operators: ["croissant","bison","texas","exusiai","emperor","jaye","waaifu","mostima"]
+      },
+      {
+        code: "CB-3",
+        title: "7:22P.M.",
+        operators: ["bison","mostima","croissant","emperor","exusiai","texas","jaye","waaifu","rat"]
+      },
+      {
+        code: "CB-4",
+        title: "7:59P.M.",
+        operators: ["bison","sora","exusiai","croissant","texas","capone","gambino"]
+      },
+      {
+        code: "CB-5",
+        title: "8:31P.M.",
+        operators: ["bison","sora","exusiai","croissant","texas","gambino","jaye","waaifu"]
+      },
+      {
+        code: "CB-ST-1",
+        title: "Evening Breeze's Kiss",
+        operators: ["bison","capone","mostima","lin","jaye","rat"]
+      },
+      {
+        code: "CB-6",
+        title: "10:26P.M.",
+        operators: ["croissant","emperor","sora","texas","exusiai","bison","gambino","mostima","yith"]
+      },
+      {
+        code: "CB-7",
+        title: "11:08P.M.",
+        operators: ["gambino","exusiai","texas","sora","bison","croissant","butler","yith","capone","mostima","rat"]
+      },
+      {
+        code: "CB-8",
+        title: "11:41P.M.",
+        operators: ["mostima","bison","exusiai","texas","croissant","sora","yith","fiametta","rat","emperor"]
+      },
+      {
+        code: "CB-9",
+        title: "0:01A.M.",
+        operators: ["gambino","waaifu","capone","jaye","rat","bison","exusiai","texas","sora","croissant","emperor"]
+      },
+      {
+        code: "CB-ST-2",
+        title: "Midnight Lungmen",
+        operators: ["waaifu","jaye","capone","gambino","rat"]
+      },
+      {
+        code: "CB-10",
+        title: "1:11A.M.",
+        operators: ["rat","capone","gambino","croissant","texas","exusiai","bison","sora","mostima","butler","jaye","waaifu","yith","fiametta"]
+      },
+      {
+        code: "CB-ST-3",
+        title: "Crack of Dawn",
+        operators: ["sora","texas","croissant","exusiai","bison","mostima","butler","fiametta","emperor"]
+      },
+      {
+        code: "CB-EX1",
+        title: "Midnight Lungmen",
+        operators: ["butler","rat","wei yenwu","emperor","eurill"]
+      },
+      {
+        code: "CB-EX2",
+        title: "Unintended Consequences",
+        operators: ["rat","gambino","capone","lappland"]
+      },
+      {
+        code: "CB-EX3",
+        title: "Cabin in the Woods",
+        operators: [ ]
+      },
       
     ]
   }
