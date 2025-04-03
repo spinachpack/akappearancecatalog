@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arknights Character Appearance Tracker</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+        :root {
+            --dark-blue: #1E2A38;
+            --medium-blue: #2C3E50;
+            --accent: #3498DB;
+            --secondary: #34495E;
+            --text: #ECF0F1;
+            --light-gray: #95A5A6;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            max-width: 100%;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        body {
+            background-color: var(--dark-blue);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header styles */
+        header {
+            background-color: var(--medium-blue);
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--accent);
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        /* Main section */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 100%;
+        }
+
+        /* Main search section */
+        .search-section {
+            width: 100%;
+        }
+
+        .main-search {
+            display: flex;
+            max-width: 600px;
+            margin: 30px auto 20px;
+            width: 100%;
+        }
+
+        .main-search input {
+            padding: 12px 15px;
+            flex: 1;
+            border: none;
+            border-radius: 25px 0 0 25px;
+            font-size: 1rem;
+            outline: none;
+            background-color: #ECF0F1;
+            color: #2C3E50;
+            min-width: 0;
+            /* Prevents flex items from overflowing */
+        }
+
+        .main-search button {
+            padding: 12px 15px;
+            background-color: var(--accent);
+            color: var(--text);
+            border: none;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+        }
+
+        .main-search button:hover {
+            background-color: #2980B9;
+        }
+
+        .video-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .small-video {
+            max-width: 100%;
+            width: 400px;
+            height: auto;
+            display: block;
+        }
+
+        .description {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto 30px;
+            text-align: center;
+            background-color: var(--secondary);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-top: 80px;
+
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 20px 15px;
+            color: var(--light-gray);
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .header-right {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: var(--medium-blue);
+                flex-direction: column;
+                padding: 0;
+                height: 0;
+                overflow: hidden;
+                transition: height 0.3s ease;
+                z-index: 99;
+                width: 100%;
+            }
+
+            .header-right.active {
+                height: auto;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+                align-items: center; /* Center navigation items */
+                text-align: center;
+            }
+            
+            nav li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav a {
+                display: block;
+                padding: 10px;
+                width: 100%;
+            }
+
+            .main-search {
+                flex-direction: column;
+                align-items: center;
+                width: 90%;
+            }
+
+            .main-search input {
+                width: 100%;
+                border-radius: 25px;
+                margin-bottom: 10px;
+            }
+
+            .main-search button {
+                width: 100%;
+                border-radius: 25px;
+            }
+
+            .description {
+                margin-top: 60px;
+                width: 90%;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .logo span {
+                font-size: 1rem;
+            }
+
+            .logo img {
+                height: 30px;
+            }
+
+            .description {
+                margin-top: 40px;
+                padding: 15px 10px;
+            }
+
+            .small-video {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Arknights Logo">
+                <span>Character Appearance Tracker</span>
+            </a>
+            <button class="mobile-toggle">☰</button>
+            <div class="header-right">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="storylist.html">Stories</a></li>
+                        <li><a href="operatorlist.html">Characters</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="description">
+            <p>Track appearances of Operators and notable NPCs in Arknights stories</p>
+            <div class="search-section">
+                <div class="main-search">
+                    <input type="text" placeholder="Search for operators or stories...">
+                    <button>Search</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-container">
+            <video autoplay loop muted playsinline class="small-video" oncontextmenu="return false;">
+                <source src="images/eepyy.webm" type="video/webm">
+            </video>
+        </div>
+    </main>
+
+    <div class="contact-info">
+        <p>Site is currently a WIP!</p>
+        <!-- <p>Contact me on <a href="https://bsky.app/profile/wkwkeigh.bsky.social" target="_blank">Bluesky</a> or <a
+                href="https://twitter.com/wkwkeigh" target="_blank">Twitter</a> if there are any mistakes</p> -->
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const headerRight = document.querySelector('.header-right');
+
+        mobileToggle.addEventListener('click', () => {
+            headerRight.classList.toggle('active');
+        });
+    </script>
+    <script src="js/search.js"></script>
+    <script src="data/operators.js"></script>
+    <script src="data/mainStories.js"></script>
+    <script src="data/sideStories.js"></script>
+    <script src="data/vignettes.js"></script>
+    <script src="data/oprecords.js"></script>
+    <script src="data/arknightsData.js"></script>
+
+</body>
+
+</html>

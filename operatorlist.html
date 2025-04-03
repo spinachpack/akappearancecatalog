@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters - Arknights Character Appearance Tracker</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+        :root {
+            --dark-blue: #1E2A38;
+            --medium-blue: #2C3E50;
+            --accent: #3498DB;
+            --secondary: #34495E;
+            --text: #ECF0F1;
+            --light-gray: #95A5A6;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            max-width: 100%;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        body {
+            background-color: var(--dark-blue);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Header styles */
+        header {
+            background-color: var(--medium-blue);
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--accent);
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        .nav-search {
+            position: relative;
+            display: flex;
+            margin-left: 20px;
+        }
+
+        .nav-search input {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 25px 0 0 25px;
+            background-color: #ECF0F1;
+            color: #2C3E50;
+            width: 200px;
+        }
+
+        .nav-search input:focus {
+            outline: none;
+        }
+
+        .nav-search button {
+            padding: 8px 15px;
+            background-color: var(--accent);
+            color: var(--text);
+            border: none;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-search button:hover {
+            background-color: #2980B9;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 20px;
+            text-align: center;
+            background-color: var(--secondary);
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            max-width: 1160px;
+        }
+
+        .page-header h1 {
+            color: var(--accent);
+        }
+
+        /* Filter Controls */
+        .filter-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--medium-blue);
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .filter-control {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .filter-control input {
+            cursor: pointer;
+        }
+
+        .filter-control label {
+            cursor: pointer;
+        }
+
+        /* Character Grid */
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .character-card {
+            background-color: var(--medium-blue);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .character-type-badge {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            padding: 3px 6px;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .playable-badge {
+            background-color: #27AE60;
+            color: white;
+        }
+
+        .npc-badge {
+            background-color: #E74C3C;
+            color: white;
+        }
+
+        .character-image-container {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .character-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .character-name {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 8px;
+            color: var(--text);
+        }
+
+        .character-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            width: 100%;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .pagination-button {
+            background-color: var(--medium-blue);
+            color: var(--text);
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .pagination-button:hover {
+            background-color: var(--accent);
+        }
+
+        .pagination-button.active {
+            background-color: var(--accent);
+        }
+
+        .pagination-button.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 900px) {
+            .character-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+            
+            .nav-search input {
+                width: 150px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .header-right {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: var(--medium-blue);
+                flex-direction: column;
+                padding: 0;
+                height: 0;
+                overflow: hidden;
+                transition: height 0.3s ease;
+                z-index: 99;
+                width: 100%;
+            }
+
+            .header-right.active {
+                height: auto;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+                align-items: center;
+                text-align: center;
+            }
+            
+            nav li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav a {
+                display: block;
+                padding: 10px;
+                width: 100%;
+            }
+
+            .nav-search {
+                width: 100%;
+                margin-top: 15px;
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .logo span {
+                font-size: 1rem;
+            }
+
+            .logo img {
+                height: 30px;
+            }
+
+            .nav-search {
+                flex-direction: column;
+            }
+
+            .nav-search input {
+                width: 100%;
+                border-radius: 25px;
+                margin-bottom: 10px;
+            }
+
+            .nav-search button {
+                width: 100%;
+                border-radius: 25px;
+            }
+
+            .character-grid {
+                grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+                gap: 15px;
+            }
+
+            .character-image-container {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Arknights Logo">
+                <span>Character Appearance Tracker</span>
+            </a>
+            <button class="mobile-toggle">☰</button>
+            <div class="header-right">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="storylist.html">Stories</a></li>
+                        <li><a href="operatorlist.html">Characters</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-search">
+                    <input type="text" placeholder="Search..." id="navSearch">
+                    <button>Search</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1 class="page-title">Characters</h1>
+        </div>
+
+        <div class="filter-controls">
+            <div class="filter-group">
+                <div class="filter-control">
+                    <input type="checkbox" id="filterPlayable" checked>
+                    <label for="filterPlayable">Playable</label>
+                </div>
+                <div class="filter-control">
+                    <input type="checkbox" id="filterNPC" checked>
+                    <label for="filterNPC">NPC</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="character-grid" id="characterGrid">
+            <!-- Content will be populated by JavaScript -->
+        </div>
+
+        <div class="pagination" id="pagination">
+            <!-- Pagination buttons will be added by JavaScript -->
+        </div>
+    </main>
+
+    <!-- JavaScript Files -->
+    <script src="data/operators.js"></script>
+    <script src="data/mainStories.js"></script>
+    <script src="data/sideStories.js"></script>
+    <script src="data/vignettes.js"></script>
+    <script src="data/oprecords.js"></script>
+    <script src="data/arknightsData.js"></script>
+    <script src="js/characterlist.js"></script>
+    <script src="js/search.js"></script>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const headerRight = document.querySelector('.header-right');
+
+        mobileToggle.addEventListener('click', () => {
+            headerRight.classList.toggle('active');
+        });
+    </script>
+
+</body>
+
+</html>

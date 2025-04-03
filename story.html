@@ -1,0 +1,510 @@
+<!-- Updated story.html with responsive fixes - full character names -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story - Arknights Character Appearance Tracker</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+        /* Keep your existing CSS */
+        :root {
+            --dark-blue: #1E2A38;
+            --medium-blue: #2C3E50;
+            --accent: #3498DB;
+            --secondary: #34495E;
+            --text: #ECF0F1;
+            --light-gray: #95A5A6;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            max-width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        body {
+            background-color: var(--dark-blue);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header styles */
+        header {
+            background-color: var(--medium-blue);
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--accent);
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        /* Nav search specific to search-results.html */
+        .nav-search {
+            position: relative;
+            display: flex;
+            margin-left: 20px;
+        }
+
+        .nav-search input {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 25px 0 0 25px;
+            background-color: #ECF0F1;
+            color: #2C3E50;
+            width: 200px;
+        }
+
+        .nav-search input:focus {
+            outline: none;
+        }
+
+        .nav-search button {
+            padding: 8px 15px;
+            background-color: var(--accent);
+            color: var(--text);
+            border: none;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-search button:hover {
+            background-color: #2980B9;
+        }
+
+        /* Story header */
+        .page-title {
+            padding: 20px;
+            text-align: center;
+            background-color: var(--secondary);
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            max-width: 1160px;
+        }
+
+
+        /* Story sections table */
+        .story-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            background-color: var(--medium-blue);
+            box-shadow: var(--shadow);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .story-table th, .story-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--secondary);
+            border-right: 1px solid var(--secondary);
+            word-wrap: break-word; /* Allow words to break and wrap */
+        }
+
+        .story-header h1 {
+            color: var(--accent);  
+        }
+
+        .story-table thead {
+            background-color: var(--secondary);
+            color: var(--text);
+            text-align: center;
+        }
+
+        .story-table th {
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .story-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Operator tags with wrapping text */
+        .operator-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .operator-tag {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background-color: var(--accent);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease;
+            text-decoration: none;
+            color: var(--text);
+            width: auto; /* Let items take their natural width */
+            flex-wrap: wrap; /* Let content wrap if needed */
+            justify-content: center; /* Center content */
+        }
+
+        .operator-tag:hover {
+            transform: scale(1.05);
+            background-color: #2980B9;
+        }
+
+        .operator-tag img {
+            width: 25px;
+            height: 25px;
+            min-width: 25px; /* Prevent image from shrinking */
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .operator-tag span {
+            word-break: break-word; /* Break words at any point if needed */
+            text-align: center; /* Center the text */
+        }
+
+        /* Navigation buttons */
+        .chapter-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .nav-button {
+            padding: 10px 20px;
+            background-color: var(--accent);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-button:hover {
+            background-color: #2980B9;
+        }
+
+        .nav-button.prev::before {
+            content: "←";
+        }
+
+        .nav-button.next::after {
+            content: "→";
+        }
+
+        /* Operator Filter Styles */
+        .operator-filter {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--secondary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .operator-filter span {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .operator-filter select {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--accent);
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .operator-filter select:hover {
+            background-color: #2980B9;
+        }
+
+        .operator-filter select:focus {
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.5);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 900px) {
+            .nav-search input {
+                width: 150px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .header-right {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: var(--medium-blue);
+                flex-direction: column;
+                padding: 0;
+                height: 0;
+                overflow: hidden;
+                transition: height 0.3s ease;
+                z-index: 99;
+                width: 100%;
+            }
+
+            .header-right.active {
+                height: auto;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+                align-items: center; /* Center navigation items */
+                text-align: center;
+            }
+            
+            nav li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav a {
+                display: block;
+                padding: 10px;
+                width: 100%;
+            }
+
+            .nav-search {
+                width: 100%;
+                margin-top: 15px;
+                margin-left: 0;
+            }
+
+            .story-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .chapter-navigation {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-button {
+                text-align: center;
+            }
+            
+            /* Allow operator tags to stack vertically and show full text */
+            .operator-tag {
+                display: inline-flex;
+                width: auto;
+                min-width: unset;
+                padding: 5px 8px;
+            }
+            
+            /* Make operators column wider on mobile to accommodate names */
+            .story-table td:last-child {
+                min-width: 160px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .logo span {
+                font-size: 1rem;
+            }
+
+            .logo img {
+                height: 30px;
+            }
+            
+            .nav-search {
+                flex-direction: column;
+            }
+            
+            .nav-search input {
+                width: 100%;
+                border-radius: 25px;
+                margin-bottom: 10px;
+            }
+            
+            .nav-search button {
+                width: 100%;
+                border-radius: 25px;
+            }
+            
+            /* Better spacing for very small screens */
+            .operator-list {
+                gap: 6px;
+            }
+            
+            .operator-tag {
+                margin-bottom: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Arknights Logo">
+                <span>Character Appearance Tracker</span>
+            </a>
+            <button class="mobile-toggle">☰</button>
+            <div class="header-right">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="storylist.html">Stories</a></li>
+                        <li><a href="operatorlist.html">Characters</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-search">
+                    <input type="text" placeholder="Search..." id="navSearch">
+                    <button>Search</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="page-title story-header">
+            <h1>Loading Story...</h1>
+            <div class="meta">Loading Category...</div>
+        </div>
+    </section>
+
+    <main class="container">
+        <table class="story-table">
+            <thead>
+                <tr>
+                    <th>Stage</th>
+                    <th>Title</th>
+                    <th>Operators</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+        
+        <div class="chapter-navigation">
+            <a href="javascript:void(0)" class="nav-button prev">Previous Chapter</a>
+            <a href="javascript:void(0)" class="nav-button next">Next Chapter</a>
+        </div>
+    </main>
+    
+    <script>
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const headerRight = document.querySelector('.header-right');
+        
+        mobileToggle.addEventListener('click', () => {
+            headerRight.classList.toggle('active');
+        });
+    </script>
+
+    <script src="data/operators.js"></script>
+    <script src="data/mainStories.js"></script>
+    <script src="data/sideStories.js"></script>
+    <script src="data/vignettes.js"></script>
+    <script src="data/oprecords.js"></script>
+    <script src="data/arknightsData.js"></script>
+    <script src="js/story.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
