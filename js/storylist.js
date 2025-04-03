@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (matchingStories.length > 0) {
             localStorage.setItem('selectedStoryId', matchingStories[0].id);
-            window.location.href = "story.html";
+            window.location.href = "story";
         }
     }
     
