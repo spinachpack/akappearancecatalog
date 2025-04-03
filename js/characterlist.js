@@ -87,6 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }
     }
+
+    
     
     function generatePagination() {
         const totalPages = Math.ceil(filteredCharacters.length / charactersPerPage);
