@@ -15,7 +15,6 @@ const operatorRecords = [
     }
   ];
   
-  // Export for both browser and Node.js environments
   if (typeof module !== 'undefined') {
     module.exports = operatorRecords;
   } else {

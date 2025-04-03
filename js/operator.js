@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
             story.episodes.forEach((episode, index) => {
                 if (episode.operators && episode.operators.includes(operatorId)) {
                     storyData.stages.push({
-                        // code: `Episode ${index + 1}`,
                         code: episode.title,
                         title: episode.title
                     });
@@ -87,12 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
-        let contentHTML = '';
+        // Create a container for all stories
+        let contentHTML = '<div class="stories-container">';
         
         stories.forEach(story => {
             contentHTML += `
                 <div class="story-section">
-                    <h2 class="chapter-title">${story.name}</h2>
+                    <h2 class="chapter-title clickable" data-story-id="${story.id}">${story.name}</h2>
                     <div class="stage-buttons">
                         ${story.stages.map(stage => 
                             `<p class="stage-button">${stage.code}</p>`
@@ -102,7 +102,17 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         });
         
+        contentHTML += '</div>';
+        
         tabContent.innerHTML = contentHTML;
+        
+        tabContent.querySelectorAll('.chapter-title').forEach(title => {
+            title.addEventListener('click', () => {
+                const storyId = title.getAttribute('data-story-id');
+                localStorage.setItem('selectedStoryId', storyId);
+                window.location.href = 'story.html'; 
+            });
+        });
     }
     
     const tabButtons = document.querySelectorAll('.tab-button');
@@ -119,4 +129,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
+    document.body.classList.add('loaded');
 });

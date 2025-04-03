@@ -1,4 +1,3 @@
-// story.js
 document.addEventListener('DOMContentLoaded', function() {
     const selectedStoryId = localStorage.getItem('selectedStoryId');
     
@@ -10,10 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.story-header h1').textContent = story.name;
             document.querySelector('.story-header .meta').textContent = getCategoryDisplay(story.category);
             
-            // Add filter controls before the table
             createFilterControls();
             
-            // Initial population of the table
             populateTable(story);
             
             setupNavigationButtons(story);
@@ -34,9 +31,10 @@ function createFilterControls() {
     filterSelect.id = 'operatorFilter';
     
     const options = [
-        { value: 'all', text: 'All Characters' },
         { value: 'playable', text: 'Playable Only' },
-        { value: 'npc', text: 'NPCs Only' }
+        { value: 'npc', text: 'NPCs Only' },
+        { value: 'all', text: 'All Characters' }
+        
     ];
     
     options.forEach(option => {
@@ -48,11 +46,9 @@ function createFilterControls() {
     
     filterContainer.appendChild(filterSelect);
     
-    // Insert the filter before the story table
     const storyTable = document.querySelector('.story-table');
     storyTable.parentNode.insertBefore(filterContainer, storyTable);
     
-    // Add event listener for filter changes
     filterSelect.addEventListener('change', function() {
         const selectedStoryId = localStorage.getItem('selectedStoryId');
         const story = window.arknightsData.stories.find(s => s.id === selectedStoryId);
@@ -217,7 +213,6 @@ function createOperatorTag(operator) {
     return a;
 }
 
-// Setup navigation buttons for the story
 function setupNavigationButtons(currentStory) {
     const prevBtn = document.querySelector('.nav-button.prev');
     const nextBtn = document.querySelector('.nav-button.next');

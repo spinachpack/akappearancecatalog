@@ -22,11 +22,11 @@ const operators = [
     id: "crownslayer",
     name: "Crownslayer",
     image: "images/Crownslayer_icon.webp",
-    playable: true 
+    playable: true
   },
   {
     id: "mephisto",
-    name: "Mephisto", 
+    name: "Mephisto",
     image: "images/Mephisto_icon.webp",
     playable: false
   },
@@ -40,7 +40,7 @@ const operators = [
     id: "faust",
     name: "Faust",
     image: "images/Faust_icon.webp",
-    playable: false 
+    playable: false
   },
   {
     id: "chen",
@@ -52,13 +52,13 @@ const operators = [
     id: "wei yenwu",
     name: "Wei Yenwu",
     image: "images/Wei_Yenwu_icon.webp",
-    playable: false 
+    playable: false
   },
   {
     id: "misha",
     name: "Misha",
     image: "images/Misha_icon.png",
-    playable: false 
+    playable: false
   },
   {
     id: "franka",
@@ -76,31 +76,31 @@ const operators = [
     id: "skullshatterer",
     name: "Skullshatterer",
     image: "images/Skullshatterer_icon.webp",
-    playable: false 
+    playable: false
   },
   {
     id: "texas",
     name: "Texas",
     image: "images/Texas_icon.webp",
-    playable: true 
+    playable: true
   },
   {
     id: "exusiai",
     name: "Exusiai",
     image: "images/Exusiai_icon.webp",
-    playable: true 
+    playable: true
   },
   {
     id: "kaltsit",
     name: "Kal'tsit",
     image: "images/Kal'tsit_icon.webp",
-    playable: true 
+    playable: true
   },
   {
     id: "wuh",
     name: "W",
     image: "images/W_icon.webp",
-    playable: true 
+    playable: true
   },
   {
     id: "talulah",
@@ -360,6 +360,79 @@ const operators = [
     image: "images/mon3tr_icon.webp",
     playable: false
   },
+  {
+    id: "fiametta",
+    name: "Fiammetta",
+    image: "images/Fiammetta_icon.webp",
+    playable: true
+  },
+  {
+    id: "mostima",
+    name: "Mostima",
+    image: "images/Mostima_icon.webp",
+    playable: true
+  },
+  {
+    id: "cecelia",
+    name: "Cecelia",
+    image: "images/Cecelia_icon.webp",
+    playable: false
+  },
+  {
+    id: "oren",
+    name: "Oren",
+    image: "images/Oren_icon.webp",
+    playable: false
+  },
+  {
+    id: "lemuen",
+    name: "Lemuen",
+    image: "images/Lemuen_icon.webp",
+    playable: false
+  },
+  {
+    id: "patia",
+    name: "Patia",
+    image: "images/Patia_icon.webp",
+    playable: false
+  },
+  {
+    id: "pope",
+    name: "Yvangelista XI",
+    image: "images/Pope_icon.webp",
+    playable: false
+  },
+  {
+    id: "insider",
+    name: "Insider",
+    image: "images/Insider_icon.webp",
+    playable: true
+  },
+  {
+    id: "andoain",
+    name: "Andoain",
+    image: "images/Andoain_icon.webp",
+    playable: false
+  },
+  {
+    id: "velliv",
+    name: "Velliv",
+    image: "images/Velliv_icon.webp",
+    playable: false
+  },
+  {
+    id: "yucatan",
+    name: "Yucatan",
+    image: "images/Yucatan_icon.webp",
+    playable: false
+  },
+  {
+    id: "sciurus",
+    name: "Sciurus",
+    image: "images/Sciurus_icon.webp",
+    playable: false
+  }
+
 
 
 
@@ -367,7 +440,6 @@ const operators = [
 
 ];
 
-// Export for both browser and Node.js environments
 if (typeof module !== 'undefined') {
   module.exports = operators;
 } else {

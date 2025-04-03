@@ -17,6 +17,7 @@
             --text: #ECF0F1;
             --light-gray: #95A5A6;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            --divider: rgba(236, 240, 241, 0.2);
         }
 
         * {
@@ -59,7 +60,6 @@
             text-decoration: none;
         }
 
-        /* Operator Profile Card */
         .operator-profile-card {
             background-color: var(--medium-blue);
             border-radius: 10px;
@@ -91,7 +91,6 @@
             margin-left: 10px;
         }
 
-        /* Tab Navigation */
         .tab-navigation {
             display: flex;
             margin: 20px 0;
@@ -116,13 +115,23 @@
             background-color: var(--secondary);
         }
 
-        /* Story Section */
-        .story-section {
+        /* Updated styles for the unified story container */
+        .stories-container {
             background-color: var(--medium-blue);
             border-radius: 10px;
-            padding: 20px;
+            padding: 0;
             margin-bottom: 20px;
             box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .story-section {
+            padding: 20px;
+            border-bottom: 1px solid var(--divider);
+        }
+
+        .story-section:last-child {
+            border-bottom: none;
         }
 
         .chapter-title {
@@ -131,11 +140,27 @@
             margin-bottom: 15px;
         }
 
+        .chapter-title.clickable {
+            cursor: pointer;
+            transition: color 0.3s, transform 0.2s;
+            position: relative;
+        }
+
+        .chapter-title.clickable:hover {
+            color: #5DADE2;
+            transform: translateX(5px);
+        }
+
+        .chapter-title.clickable:hover::after {
+            opacity: 1;
+            transform: translateX(5px);
+        }
+
         .stage-buttons {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .stage-button {
@@ -162,7 +187,6 @@
             font-style: italic;
         }
 
-        /* Responsive styles */
         @media (max-width: 768px) {
             .operator-profile-card {
                 flex-direction: column;
@@ -200,10 +224,9 @@
 </head>
 
 <body>
-    <!-- Navbar will be inserted by js/navbar.js -->
+    <!-- Navbar-->
 
     <main class="container">
-        <!-- Operator Profile Card -->
         <div class="operator-profile-card">
             <div class="operator-avatar">
                 <img src="" alt="Operator" id="operatorAvatar">
@@ -221,19 +244,19 @@
 
         <!-- Tab Content -->
         <div id="main-story" class="tab-content active">
-            <!-- Will be populated by JavaScript -->
+            <!-- Content will be dynamically added here -->
         </div>
 
         <div id="side-story" class="tab-content">
-            <!-- Will be populated by JavaScript -->
+            <!-- Content will be dynamically added here -->
         </div>
 
         <div id="vignette" class="tab-content">
-            <!-- Will be populated by JavaScript -->
+            <!-- Content will be dynamically added here -->
         </div>
 
         <div id="operator-record" class="tab-content">
-            <!-- Will be populated by JavaScript -->
+            <!-- Content will be dynamically added here -->
         </div>
     </main>
 

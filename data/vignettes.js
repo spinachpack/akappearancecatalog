@@ -26,7 +26,6 @@ const vignettes = [
     },
   ];
   
-  // Export for both browser and Node.js environments
   if (typeof module !== 'undefined') {
     module.exports = vignettes;
   } else {

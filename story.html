@@ -1,4 +1,3 @@
-<!-- story.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +8,6 @@
     <link rel="icon" type="image/png" href="images/logo.png">
     <script src="js/navbar.js" defer></script>
     <style>
-        /* Keep your existing CSS */
         :root {
             --dark-blue: #1E2A38;
             --medium-blue: #2C3E50;
@@ -60,7 +58,6 @@
             padding: 0 15px;
         }
 
-        /* Story header */
         .page-title {
             padding: 20px;
             text-align: center;
@@ -72,7 +69,6 @@
         }
 
 
-        /* Story sections table */
         .story-table {
             width: 100%;
             border-collapse: collapse;
@@ -89,7 +85,6 @@
             border-bottom: 1px solid var(--secondary);
             border-right: 1px solid var(--secondary);
             word-wrap: break-word;
-            /* Allow words to break and wrap */
         }
 
         .story-header h1 {
@@ -111,7 +106,6 @@
             border-bottom: none;
         }
 
-        /* Operator tags with wrapping text */
         .operator-list {
             display: flex;
             flex-wrap: wrap;
@@ -130,11 +124,8 @@
             text-decoration: none;
             color: var(--text);
             width: auto;
-            /* Let items take their natural width */
             flex-wrap: wrap;
-            /* Let content wrap if needed */
             justify-content: center;
-            /* Center content */
         }
 
         .operator-tag:hover {
@@ -146,19 +137,15 @@
             width: 25px;
             height: 25px;
             min-width: 25px;
-            /* Prevent image from shrinking */
             border-radius: 50%;
             object-fit: cover;
         }
 
         .operator-tag span {
             word-break: break-word;
-            /* Break words at any point if needed */
             text-align: center;
-            /* Center the text */
         }
 
-        /* Navigation buttons */
         .chapter-navigation {
             display: flex;
             justify-content: space-between;
@@ -190,7 +177,6 @@
             content: "→";
         }
 
-        /* Operator Filter Styles */
         .operator-filter {
             margin-bottom: 20px;
             padding: 15px;
@@ -225,7 +211,6 @@
             box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.5);
         }
 
-        /* Responsive styles */
         @media (max-width: 768px) {
             .story-table {
                 display: block;
@@ -241,7 +226,6 @@
                 text-align: center;
             }
 
-            /* Allow operator tags to stack vertically and show full text */
             .operator-tag {
                 display: inline-flex;
                 width: auto;
@@ -249,7 +233,6 @@
                 padding: 5px 8px;
             }
 
-            /* Make operators column wider on mobile to accommodate names */
             .story-table td:last-child {
                 min-width: 160px;
             }
@@ -260,7 +243,6 @@
                 padding: 0 10px;
             }
 
-            /* Better spacing for very small screens */
             .operator-list {
                 gap: 6px;
             }
@@ -273,7 +255,6 @@
 </head>
 
 <body>
-    <!-- Header will be inserted by navbar.js -->
     <div id="header-container"></div>
 
     <section class="container">

@@ -82,7 +82,7 @@ function displaySearchResults(query, filter) {
             operatorCard.className = 'story-card';
             operatorCard.href = `character.html?id=${operator.id}`;
             
-            // Generate a random color for the background circle
+            //random color for the background circle
             const colors = ['#16A085', '#8E44AD', '#D35400', '#2980B9', '#C0392B', '#27AE60'];
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
             
@@ -106,7 +106,6 @@ function displaySearchResults(query, filter) {
     }
     
     if ((filter === 'all' || filter === 'story') && results.stories.length > 0) {
-        // The stories section with adjusted grid width to match operators
         const storiesSection = document.createElement('div');
         storiesSection.className = 'results-section';
         

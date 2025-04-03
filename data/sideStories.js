@@ -1,4 +1,3 @@
-// sideStories.js
 const sideStories = [
     {
       id: "knights-treasure",
@@ -156,16 +155,71 @@ const sideStories = [
         title: "Warming-up",
         operators: ["alty","kaltsit","m3"]
       },
-      
-      
+    ]
+  },
+  {
+    id: "guide-ahead",
+      name: "Guide Ahead",
+      category: "side-story",
+      url: "story-guideahead.html",
+      stages: [
+      {
+        code: "GA-ST-1",
+        title: "Right Place, Right Time",
+        operators: ["cecelia","enforcer","fiametta","mostima","oren","executor","velliv","pope"]
+      },
+      {
+        code: "GA-1",
+        title: "Darkness Beneath the Light",
+        operators: ["sciurus","yucatan","oren","velliv","enforcer","patia","cecelia","fiametta","lemuen","mostima","pope"]
+      },
+      {
+        code: "GA-2",
+        title: "Time to Stroll",
+        operators: ["fiametta","enforcer","cecelia","pope","mostima","velliv","patia","oren","insider","executor"]
+      },
+      {
+        code: "GA-3",
+        title: "Mixed Blood",
+        operators: ["oren","fiametta","enforcer","cecelia","velliv","mostima","pope","insider","executor","andoain"]
+      },
+      {
+        code: "GA-4",
+        title: "Ecclesia Requietum",
+        operators: ["fiametta","mostima","enforcer","andoain","executor","cecelia","lemuen"]
+      },
+      {
+        code: "GA-5",
+        title: "Obsequies",
+        operators: ["andoain","cecelia","enforcer","oren","patia","mostima","fiametta","velliv","pope"]
+      },
+      {
+        code: "GA-6",
+        title: "Requiem",
+        operators: ["enforcer","andoain","cecelia","oren","patia","executor","velliv","pope","fiametta","lemuen","mostima"]
+      },
+      {
+        code: "GA-7",
+        title: "Light and Shadow",
+        operators: ["executor","oren","velliv","fiametta","patia","mostima","pope","andoain"]
+      },
+      {
+        code: "GA-8",
+        title: "Shadow and Ash",
+        operators: ["pope","cecelia","enforcer","velliv","mostima","fiametta","lemuen","andoain","oren"]
+      },
+      {
+        code: "GA-ST-2",
+        title: "Iris",
+        operators: ["sciurus","yucatan","enforcer","mostima","fiametta","velliv","lemuen","mostima","oren","executor","cecelia","insider","andoain"]
+      },
 
+      
     ]
   }
 ]
  
 
-  
-  // Export for both browser and Node.js environments
   if (typeof module !== 'undefined') {
     module.exports = sideStories;
   } else {

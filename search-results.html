@@ -65,13 +65,12 @@
             padding: 0 15px;
         }
 
-        /* Main content */
+
         main {
             flex: 1;
             padding: 20px 0;
         }
 
-        /* Search results styles */
         .search-header {
             background-color: var(--secondary);
             padding: 20px;
@@ -114,7 +113,6 @@
             color: var(--light-gray);
         }
 
-        /* Results section */
         .results-section {
             margin-bottom: 40px;
         }
@@ -128,7 +126,6 @@
             gap: 10px;
         }
 
-        /* Operator results */
         .operator-results {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -175,7 +172,6 @@
             color: var(--light-gray);
         }
 
-        /* Story results */
         .story-results {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -228,7 +224,6 @@
             background-color: #2980B9;
         }
 
-        /* No results */
         .no-results {
             background-color: var(--medium-blue);
             padding: 30px;
@@ -242,24 +237,6 @@
             color: var(--accent);
         }
 
-        /* Contact info */
-        .contact-info {
-            padding: 20px 15px;
-            text-align: center;
-            color: var(--light-gray);
-            margin-top: auto;
-        }
-
-        .contact-info a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive styles */
         @media (max-width: 768px) {
 
             .operator-results,
@@ -285,7 +262,7 @@
 </head>
 
 <body>
-    <!-- Header will be inserted by navbar.js -->
+    
     <div id="header-container"></div>
 
     <main class="container">
@@ -300,16 +277,12 @@
         </div>
 
         <div id="searchResults">
-            <!-- Results will be loaded here by JavaScript -->
+            
             <div class="loading-spinner">Searching...</div>
         </div>
     </main>
 
-    <div class="contact-info">
-        <!-- <p>Site is currently a WIP!</p> -->
-        <!-- <p>Contact me on <a href="https://bsky.app/profile/wkwkeigh.bsky.social" target="_blank">Bluesky</a> or 
-                href="https://twitter.com/wkwkeigh" target="_blank">Twitter</a> if there are any mistakes</p> -->
-    </div>
+
 
     <script src="data/operators.js"></script>
     <script src="data/mainStories.js"></script>

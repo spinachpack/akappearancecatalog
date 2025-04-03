@@ -1,4 +1,3 @@
-// mainStories.js
 const mainStories = [
     {
       id: "chapter-0",

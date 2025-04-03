@@ -30,6 +30,7 @@
             overflow-x: hidden;
             width: 100%;
             position: relative;
+            height: 100%;
         }
 
         body {
@@ -39,6 +40,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow-y: auto;
         }
 
         .container {
@@ -48,7 +50,6 @@
             padding: 0 15px;
         }
 
-        /* Header styles */
         header {
             background-color: var(--medium-blue);
             padding: 15px 0;
@@ -117,7 +118,6 @@
             color: var(--text);
         }
 
-        /* Main section */
         main {
             flex: 1;
             display: flex;
@@ -126,7 +126,6 @@
             width: 100%;
         }
 
-        /* Main search section */
         .search-section {
             width: 100%;
         }
@@ -148,7 +147,6 @@
             background-color: #ECF0F1;
             color: #2C3E50;
             min-width: 0;
-            /* Prevents flex items from overflowing */
         }
 
         .main-search button {
@@ -168,13 +166,21 @@
             background-color: #2980B9;
         }
 
+        .content-wrapper {
+            position: relative;
+            width: 100%;
+            margin-bottom: 0;
+        }
+
         .video-container {
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 20px;
-            position: relative;
+            position: absolute;
+            top: -120px;
+            left: 0;
+            z-index: 1;
         }
 
         .small-video {
@@ -187,14 +193,38 @@
         .description {
             max-width: 800px;
             width: 100%;
-            margin: 0 auto 30px;
+            margin: 0 auto 20px;
             text-align: center;
             background-color: var(--secondary);
             padding: 20px;
             border-radius: 10px;
             box-shadow: var(--shadow);
-            margin-top: 80px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 2;
+        }
 
+        .notes-section {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            background-color: var(--secondary);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 2; 
+            margin-bottom: 0; 
+        }
+
+        .notes-section ul {
+            list-style-position: inside;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .notes-section li {
+            margin-bottom: 8px;
         }
 
         .contact-info {
@@ -215,7 +245,13 @@
             text-decoration: underline;
         }
 
-        /* Responsive styles */
+        /* Fix for unnecessary scrollbar */
+        .scrollbar-fix {
+            overflow-x: clip;
+            overflow-y: visible;
+            width: 100%;
+        }
+
         @media (max-width: 768px) {
             .mobile-toggle {
                 display: block;
@@ -246,15 +282,15 @@
                 flex-direction: column;
                 width: 100%;
                 gap: 10px;
-                align-items: center; /* Center navigation items */
+                align-items: center;
                 text-align: center;
             }
-            
+
             nav li {
                 width: 100%;
                 text-align: center;
             }
-            
+
             nav a {
                 display: block;
                 padding: 10px;
@@ -279,9 +315,18 @@
             }
 
             .description {
-                margin-top: 60px;
+                margin-top: 20px;
                 width: 90%;
                 padding: 15px;
+            }
+
+            .notes-section {
+                width: 90%;
+                padding: 15px;
+            }
+            
+            .video-container {
+                top: -80px;
             }
         }
 
@@ -299,12 +344,20 @@
             }
 
             .description {
-                margin-top: 40px;
+                margin-top: 20px;
+                padding: 15px 10px;
+            }
+
+            .notes-section {
                 padding: 15px 10px;
             }
 
             .small-video {
                 width: 90%;
+            }
+            
+            .video-container {
+                top: -60px;
             }
         }
     </style>
@@ -315,7 +368,7 @@
         <div class="container header-content">
             <a href="index.html" class="logo">
                 <img src="images/logo.png" alt="Arknights Logo">
-                <span>Character Appearance Tracker</span>
+                <span>Story Appearance Index</span>
             </a>
             <button class="mobile-toggle">☰</button>
             <div class="header-right">
@@ -330,9 +383,9 @@
         </div>
     </header>
 
-    <main class="container">
+    <main class="container scrollbar-fix">
         <div class="description">
-            <p>Track appearances of Operators and notable NPCs in Arknights stories</p>
+            <p>Find appearances of operators and notable NPCs in Arknights stories</p>
             <div class="search-section">
                 <div class="main-search">
                     <input type="text" placeholder="Search for operators or stories...">
@@ -341,21 +394,28 @@
             </div>
         </div>
 
-        <div class="video-container">
-            <video autoplay loop muted playsinline class="small-video" oncontextmenu="return false;">
-                <source src="images/eepyy.webm" type="video/webm">
-            </video>
+        <div class="notes-section">
+            <h3>Notes:</h3>
+            <ul>
+                <li>This is a personal project created for fun and is still a work in progress (WIP).</li>
+                <li>The site is held together by sticks and stones, so expect some scuffed parts.</li>
+                <li>Stories are added based on personal preference, so some favorites might appear sooner.</li>
+                <li>Characters will be included even if they don't appear in a stage, as long as they have dialogue or
+                    play a role.</li>
+                <li>Feel free to reach out if you spot any mistakes.</li>
+            </ul>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="video-container">
+                <video autoplay loop muted playsinline class="small-video" oncontextmenu="return false;">
+                    <source src="images/eepyy.webm" type="video/webm">
+                </video>
+            </div>
         </div>
     </main>
 
-    <div class="contact-info">
-        <p>Site is currently a WIP!</p>
-        <!-- <p>Contact me on <a href="https://bsky.app/profile/wkwkeigh.bsky.social" target="_blank">Bluesky</a> or <a
-                href="https://twitter.com/wkwkeigh" target="_blank">Twitter</a> if there are any mistakes</p> -->
-    </div>
-
     <script>
-        // Mobile menu toggle
         const mobileToggle = document.querySelector('.mobile-toggle');
         const headerRight = document.querySelector('.header-right');
 

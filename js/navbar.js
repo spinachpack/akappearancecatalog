@@ -1,7 +1,4 @@
-// navbar.js - Creates and inserts the navbar and styles on all pages
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Add the stylesheet to the head
     const style = document.createElement('style');
     style.textContent = `
         /* Navbar and common styles */
@@ -242,7 +239,6 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
-    // Create navbar HTML
     const navbar = document.createElement('header');
     navbar.innerHTML = `
         <div class="container header-content">
@@ -267,11 +263,9 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     `;
 
-    // Insert navbar at the beginning of the body
     const firstElement = document.body.firstChild;
     document.body.insertBefore(navbar, firstElement);
 
-    // Set up mobile toggle functionality
     const mobileToggle = navbar.querySelector('.mobile-toggle');
     const headerRight = navbar.querySelector('.header-right');
     
@@ -279,7 +273,6 @@ document.addEventListener('DOMContentLoaded', function() {
         headerRight.classList.toggle('active');
     });
 
-    // Highlight current page in navbar
     const currentPage = window.location.pathname.split('/').pop();
     const navLinks = navbar.querySelectorAll('nav a');
     
@@ -291,7 +284,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Initialize search functionality if search.js is loaded
     if (typeof initializeSearchElements === 'function') {
         setTimeout(initializeSearchElements, 100);
     }
