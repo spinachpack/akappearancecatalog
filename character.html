@@ -77,6 +77,7 @@
             overflow: hidden;
             border: 3px solid var(--accent);
             margin-right: 20px;
+            flex-shrink: 0;
         }
 
         .operator-avatar img {
@@ -85,10 +86,29 @@
             object-fit: cover;
         }
 
+        .operator-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px !important;
+        }
+
         .operator-name {
             font-size: 2rem;
             color: var(--accent);
-            margin-left: 10px;
+            margin-bottom: 0;
+        }
+
+        .appearance-counter {
+            font-size: 0.9rem;
+            color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            margin-top: 0
+        }
+
+        .counter-value {
+            font-weight: bold;
+            margin-right: 4px;
         }
 
         .tab-navigation {
@@ -115,7 +135,6 @@
             background-color: var(--secondary);
         }
 
-        /* Updated styles for the unified story container */
         .stories-container {
             background-color: var(--medium-blue);
             border-radius: 10px;
@@ -198,8 +217,8 @@
                 margin-bottom: 15px;
             }
 
-            .operator-name {
-                margin-left: 0;
+            .operator-info {
+                align-items: center;
             }
 
             .tab-navigation {
@@ -224,7 +243,6 @@
 </head>
 
 <body>
-    <!-- Navbar-->
 
     <main class="container">
         <div class="operator-profile-card">
@@ -232,9 +250,9 @@
                 <img src="" alt="Operator" id="operatorAvatar">
             </div>
             <h1 class="operator-name" id="operatorName">Operator Name</h1>
+
         </div>
 
-        <!-- Tab Navigation -->
         <div class="tab-navigation">
             <button class="tab-button active" data-tab="main-story">Main Story</button>
             <button class="tab-button" data-tab="side-story">Side Story</button>
@@ -242,21 +260,20 @@
             <button class="tab-button" data-tab="operator-record">Operator Record</button>
         </div>
 
-        <!-- Tab Content -->
         <div id="main-story" class="tab-content active">
-            <!-- Content will be dynamically added here -->
+
         </div>
 
         <div id="side-story" class="tab-content">
-            <!-- Content will be dynamically added here -->
+
         </div>
 
         <div id="vignette" class="tab-content">
-            <!-- Content will be dynamically added here -->
+
         </div>
 
         <div id="operator-record" class="tab-content">
-            <!-- Content will be dynamically added here -->
+
         </div>
     </main>
 

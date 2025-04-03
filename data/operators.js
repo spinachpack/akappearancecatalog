@@ -431,6 +431,18 @@ const operators = [
     name: "Sciurus",
     image: "images/Sciurus_icon.webp",
     playable: false
+  },
+  {
+    id: "weedy",
+    name: "Weedy",
+    image: "images/Weedy_icon.webp",
+    playable: true
+  },
+  {
+    id: "keller",
+    name: "Keller",
+    image: "images/Adele_icon.webp",
+    playable: false
   }
 
 

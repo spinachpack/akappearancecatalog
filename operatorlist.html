@@ -106,7 +106,6 @@
             cursor: pointer;
         }
 
-        /* Character Grid */
         .character-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -181,7 +180,6 @@
             width: 100%;
         }
 
-        /* Pagination */
         .pagination {
             display: flex;
             justify-content: center;
@@ -213,7 +211,6 @@
             cursor: not-allowed;
         }
 
-        /* Responsive styles */
         @media (max-width: 900px) {
             .character-grid {
                 grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -239,7 +236,7 @@
 </head>
 
 <body>
-    <!-- Navbar will be inserted by js/navbar.js -->
+
     <div id="header-container"></div>
 
     <main class="container">
@@ -261,15 +258,14 @@
         </div>
 
         <div class="character-grid" id="characterGrid">
-            <!-- Content will be populated by JavaScript -->
+            
         </div>
 
         <div class="pagination" id="pagination">
-            <!-- Pagination buttons will be added by JavaScript -->
+            
         </div>
     </main>
 
-    <!-- JavaScript Files -->
     <script src="data/operators.js"></script>
     <script src="data/mainStories.js"></script>
     <script src="data/sideStories.js"></script>
