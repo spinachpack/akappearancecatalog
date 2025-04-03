@@ -1,6 +1,7 @@
 <!-- story.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,6 +46,11 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            visibility: hidden;
+        }
+
+        body.loaded {
+            visibility: visible;
         }
 
         .container {
@@ -77,15 +83,17 @@
             overflow: hidden;
         }
 
-        .story-table th, .story-table td {
+        .story-table th,
+        .story-table td {
             padding: 15px;
             border-bottom: 1px solid var(--secondary);
             border-right: 1px solid var(--secondary);
-            word-wrap: break-word; /* Allow words to break and wrap */
+            word-wrap: break-word;
+            /* Allow words to break and wrap */
         }
 
         .story-header h1 {
-            color: var(--accent);  
+            color: var(--accent);
         }
 
         .story-table thead {
@@ -121,9 +129,12 @@
             transition: transform 0.2s ease;
             text-decoration: none;
             color: var(--text);
-            width: auto; /* Let items take their natural width */
-            flex-wrap: wrap; /* Let content wrap if needed */
-            justify-content: center; /* Center content */
+            width: auto;
+            /* Let items take their natural width */
+            flex-wrap: wrap;
+            /* Let content wrap if needed */
+            justify-content: center;
+            /* Center content */
         }
 
         .operator-tag:hover {
@@ -134,14 +145,17 @@
         .operator-tag img {
             width: 25px;
             height: 25px;
-            min-width: 25px; /* Prevent image from shrinking */
+            min-width: 25px;
+            /* Prevent image from shrinking */
             border-radius: 50%;
             object-fit: cover;
         }
 
         .operator-tag span {
-            word-break: break-word; /* Break words at any point if needed */
-            text-align: center; /* Center the text */
+            word-break: break-word;
+            /* Break words at any point if needed */
+            text-align: center;
+            /* Center the text */
         }
 
         /* Navigation buttons */
@@ -217,16 +231,16 @@
                 display: block;
                 overflow-x: auto;
             }
-            
+
             .chapter-navigation {
                 flex-direction: column;
                 gap: 10px;
             }
-            
+
             .nav-button {
                 text-align: center;
             }
-            
+
             /* Allow operator tags to stack vertically and show full text */
             .operator-tag {
                 display: inline-flex;
@@ -234,29 +248,30 @@
                 min-width: unset;
                 padding: 5px 8px;
             }
-            
+
             /* Make operators column wider on mobile to accommodate names */
             .story-table td:last-child {
                 min-width: 160px;
             }
         }
-        
+
         @media (max-width: 480px) {
             .container {
                 padding: 0 10px;
             }
-            
+
             /* Better spacing for very small screens */
             .operator-list {
                 gap: 6px;
             }
-            
+
             .operator-tag {
                 margin-bottom: 4px;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Header will be inserted by navbar.js -->
     <div id="header-container"></div>
@@ -278,10 +293,10 @@
                 </tr>
             </thead>
             <tbody>
-                
+
             </tbody>
         </table>
-        
+
         <div class="chapter-navigation">
             <a href="javascript:void(0)" class="nav-button prev">Previous Chapter</a>
             <a href="javascript:void(0)" class="nav-button next">Next Chapter</a>
@@ -297,4 +312,5 @@
     <script src="js/story.js"></script>
     <script src="js/search.js"></script>
 </body>
+
 </html>

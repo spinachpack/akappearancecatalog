@@ -1,6 +1,7 @@
 <!-- storylist.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,6 +45,11 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            visibility: hidden;
+        }
+
+        body.loaded {
+            visibility: visible;
         }
 
         .container {
@@ -52,7 +58,7 @@
             margin: 0 auto;
             padding: 0 15px;
         }
-        
+
         /* Page title */
         .page-title {
             padding: 20px;
@@ -63,22 +69,22 @@
             box-shadow: var(--shadow);
             max-width: 1160px;
         }
-        
+
         .page-title h1 {
             color: var(--accent);
         }
-        
+
         /* Tabs */
         .tabs {
             margin-bottom: 30px;
         }
-        
+
         .tab-buttons {
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
         }
-        
+
         .tab-button {
             padding: 10px 20px;
             background-color: var(--medium-blue);
@@ -88,21 +94,21 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        
+
         .tab-button:hover:not(.active) {
             background-color: var(--secondary);
         }
-        
+
         .tab-button.active {
             background-color: var(--accent);
         }
-        
+
         /* Responsive styles for tabs */
         @media (max-width: 768px) {
             .tab-buttons {
                 flex-wrap: wrap;
             }
-            
+
             .tab-button {
                 flex: 1 1 40%;
             }
@@ -113,7 +119,7 @@
                 flex: 1 1 100%;
             }
         }
-        
+
         .tab-content {
             display: none;
             background-color: var(--medium-blue);
@@ -121,20 +127,20 @@
             border-radius: 10px;
             box-shadow: var(--shadow);
         }
-        
+
         .tab-content.active {
             display: block;
         }
-        
+
         /* Story lists */
         .story-list {
             list-style: none;
         }
-        
+
         .story-item {
             margin-bottom: 15px;
         }
-        
+
         .story-item a {
             display: block;
             padding: 15px;
@@ -144,12 +150,12 @@
             border-radius: 5px;
             transition: transform 0.3s, background-color 0.3s;
         }
-        
+
         .story-item a:hover {
             background-color: var(--accent);
             transform: translateX(10px);
         }
-        
+
         /* Responsive */
         @media (max-width: 480px) {
             .container {
@@ -158,6 +164,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header will be inserted by navbar.js -->
     <div id="header-container"></div>
@@ -176,25 +183,25 @@
                 <button class="tab-button" data-tab="vignette">Vignette</button>
                 <button class="tab-button" data-tab="operator-record">Operator Record</button>
             </div>
-            
+
             <div id="main-story" class="tab-content active">
 
             </div>
-            
+
             <div id="side-story" class="tab-content">
 
             </div>
-            
+
             <div id="vignette" class="tab-content">
 
             </div>
-            
+
             <div id="operator-record" class="tab-content">
 
             </div>
         </div>
     </main>
-    
+
     <script src="data/operators.js"></script>
     <script src="data/mainStories.js"></script>
     <script src="data/sideStories.js"></script>
@@ -204,4 +211,5 @@
     <script src="js/storylist.js"></script>
     <script src="js/search.js"></script>
 </body>
+
 </html>

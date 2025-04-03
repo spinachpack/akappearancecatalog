@@ -295,4 +295,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof initializeSearchElements === 'function') {
         setTimeout(initializeSearchElements, 100);
     }
+
+    document.body.classList.add('loaded');
 });

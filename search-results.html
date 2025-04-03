@@ -51,6 +51,11 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            visibility: hidden;
+        }
+
+        body.loaded {
+            visibility: visible;
         }
 
         .container {
@@ -256,6 +261,7 @@
 
         /* Responsive styles */
         @media (max-width: 768px) {
+
             .operator-results,
             .story-results {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
