@@ -516,6 +516,49 @@ const operators = [
     image: "images/Frostleaf_icon.webp",
     playable: true
   },
+  {
+    id: "tatjana",
+    name: "Tatjana",
+    image: "images/Tatjana_icon.webp",
+    playable: false
+  },
+  {
+    id: "folinic",
+    name: "Folinic",
+    image: "images/Folinic_icon.webp",
+    playable: true
+  },
+  {
+    id: "suzuran",
+    name: "Suzuran",
+    image: "images/Suzuran_icon.webp",
+    playable: true
+  },
+  {
+    id: "severin",
+    name: "Severin",
+    image: "images/Severin_icon.webp",
+    playable: false
+  },
+  {
+    id: "greythroat",
+    name: "GreyThroat",
+    image: "images/GreyThroat_icon.webp",
+    playable: true
+  },
+  {
+    id: "ayerscarpe",
+    name: "Ayerscarpe",
+    image: "images/Ayerscarpe_icon.webp",
+    playable: true
+  },
+  {
+    id: "click",
+    name: "Click",
+    image: "images/Click_icon.webp",
+    playable: true
+  },
+
 
 
 

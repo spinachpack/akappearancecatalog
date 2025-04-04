@@ -306,7 +306,74 @@ const sideStories = [
         title: "Cabin in the Woods",
         operators: [ ]
       },
-      
+    ]
+  },
+  {
+    id: "twilightofwolumonde",
+      name: "Twilight of Wolumonde",
+      category: "side-story",
+      url: "story-twilightofwolumonde.html",
+      stages: [
+      {
+        code: "TW-ST-1",
+        title: "Right Place, Right Time",
+        operators: ["tatjana","folinic","suzuran","mudrock"]
+      },
+      {
+        code: "TW-1",
+        title: "Silence Maintained",
+        operators: ["severin","suzuran","folinic","tatjana"]
+      },
+      {
+        code: "TW-2",
+        title: "Outpost Rebellion",
+        operators: ["severin","suzuran","folinic","tatjana"]
+      },
+      {
+        code: "TW-3",
+        title: "Smoldering Spire",
+        operators: ["severin","suzuran","folinic","tatjana","mudrock"]
+      },
+      {
+        code: "TW-4",
+        title: "Vengeful Soul",
+        operators: ["greythroat","click","ayerscarpe","folinic","severin","suzuran","tatjana","mudrock"]
+      },
+      {
+        code: "TW-5",
+        title: "Winterwisp's Elegy",
+        operators: ["severin","suzuran","folinic","tatjana","greythroat","ayerscarpe"]
+      },
+      {
+        code: "TW-6",
+        title: "Fanning Flames",
+        operators: ["severin","suzuran","folinic","tatjana","greythroat","ayerscarpe","mudrock","click"]
+      },
+      {
+        code: "TW-7",
+        title: "Sundered Land",
+        operators: ["severin","suzuran","folinic","tatjana","mudrock","click","greythroat","ayerscarpe"]
+      },
+      {
+        code: "TW-8",
+        title: "Sinking Moonlight",
+        operators: ["severin","suzuran","folinic","tatjana","mudrock","click","greythroat","ayerscarpe"]
+      },
+      {
+        code: "TW-ST-2",
+        title: "Above the Embers",
+        operators: ["greythroat","ayerscarpe","severin","tatjana","suzuran","click","folinic"]
+      },
+      {
+        code: "TW-S-1",
+        title: "The Three Colossi",
+        operators: ["severin"]
+      },
+      {
+        code: "TW-S-2",
+        title: "Bouquet of Mourning",
+        operators: ["mudrock","greythroat","folinic"]
+      },
     ]
   }
 ]
