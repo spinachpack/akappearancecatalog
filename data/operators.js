@@ -516,12 +516,6 @@ const operators = [
     image: "images/Frostleaf_icon.webp",
     playable: true
   },
-  {
-    id: "jessica",
-    name: "Jessica",
-    image: "images/Jessica_icon.webp",
-    playable: true
-  }
 
 
 
