@@ -211,6 +211,65 @@ const mainStories = [
           operators: ["misha","hoshiguma","franka","chen","amiya","wuh"]
         },
       ]
+    },
+    {
+      id: "episode-4",
+      name: "Episode 04: Burning Run",
+      category: "main-story",
+      url: "story-episode4.html",
+      stages: [
+        {
+          code: "4-1",
+          title: "Consolation",
+          operators: ["kaltsit","amiya","meteorite","frostleaf","jessica","texas","exusiai","franka","liskarm"]
+        },
+        {
+          code: "4-2",
+          title: "A Walk in the Rain",
+          operators: ["meteorite","frostleaf","jessica","kaltsit","amiya","chen"]
+        },
+        {
+          code: "4-3",
+          title: "Artificial Cold",
+          operators: ["kaltsit","amiya","jessica","frostleaf","meteorite"]
+        },
+
+        {
+          code: "4-4",
+          title: "Nerves of Steel",
+          operators: ["amiya","chen","hoshiguma","jessica","mephisto","wuh","meteorite","frostleaf"]
+        },
+        {
+          code: "4-5",
+          title: "Bureaucracy",
+          operators: ["amiya","chen","kaltsit","hoshiguma"]
+        },
+        {
+          code: "4-6",
+          title: "Ignorance",
+          operators: ["amiya","chen","talulah","hoshiguma","kaltsit"]
+        },
+        {
+          code: "4-7",
+          title: "Mutual Benefits",
+          operators: ["amiya","chen","kaltsit"]
+        },
+        {
+          code: "4-8",
+          title: "Acute Stress Disorder",
+          operators: ["amiya","frostleaf","mephisto","meteorite","jessica"]
+        },
+        {
+          code: "4-9",
+          title: "Bad to the Bone",
+          operators: ["amiya","meteorite","mephisto","frostleaf","jessica","frostnova"]
+        },
+        {
+          code: "4-10",
+          title: "Extinguished Flames",
+          operators: ["frostleaf","amiya","frostnova","meteorite","jessica","patriot","chen","mephisto","talulah"]
+        },
+      ]
     }
   ];
   

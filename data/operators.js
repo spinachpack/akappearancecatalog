@@ -503,7 +503,26 @@ const operators = [
     name: "Lappland",
     image: "images/Lappland_icon.webp",
     playable: true
+  },
+  {
+    id: "meteorite",
+    name: "Meteorite",
+    image: "images/Meteorite_icon.webp",
+    playable: true
+  },
+  {
+    id: "frostleaf",
+    name: "Frostleaf",
+    image: "images/Frostleaf_icon.webp",
+    playable: true
+  },
+  {
+    id: "jessica",
+    name: "Jessica",
+    image: "images/Jessica_icon.webp",
+    playable: true
   }
+
 
 
 
