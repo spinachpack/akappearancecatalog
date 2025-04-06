@@ -558,6 +558,42 @@ const operators = [
     image: "images/Click_icon.webp",
     playable: true
   },
+  {
+    id: "ines",
+    name: "Ines",
+    image: "images/Ines_icon.webp",
+    playable: true
+  },
+  {
+    id: "hoederer",
+    name: "Hoederer",
+    image: "images/Hoederer_icon.webp",
+    playable: true
+  },
+  {
+    id: "theresa",
+    name: "Theresa",
+    image: "images/Theresa_icon.webp",
+    playable: false
+  },
+  {
+    id: "closure",
+    name: "Closure",
+    image: "images/Closure_icon.webp",
+    playable: false
+  },
+  {
+    id: "doctor",
+    name: "Doctor",
+    image: "images/Doctor_icon.webp",
+    playable: false
+  },
+  {
+    id: "confessarius",
+    name: "Confessarius",
+    image: "images/Qui'sartuštaj_icon.webp",
+    playable: false
+  },
 
 
 

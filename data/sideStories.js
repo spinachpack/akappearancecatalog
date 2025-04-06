@@ -133,7 +133,7 @@ const sideStories = [
       {
         code: "OF-ST-5",
         title: "Love of this Life",
-        operators: ["amiya","herman","schwarz","ceylon"]
+        operators: ["amiya","herman","schwarz","ceylon","doctor"]
       },
       {
         code: "OF-ST-6",
@@ -373,6 +373,54 @@ const sideStories = [
         code: "TW-S-2",
         title: "Bouquet of Mourning",
         operators: ["mudrock","greythroat","folinic"]
+      },
+    ]
+  },
+  {
+    id: "darknightsmemoir",
+      name: "Darknights Memoir",
+      category: "side-story",
+      url: "story-darknights.html",
+      stages: [
+      {
+        code: "DM-1",
+        title: "Buried",
+        operators: ["hoederer","ines","wuh"]
+      },
+      {
+        code: "DM-2",
+        title: "By Chance",
+        operators: ["hoederer","ines","wuh","theresa"]
+      },
+      {
+        code: "DM-3",
+        title: "Extrusion",
+        operators: ["hoederer","ines","wuh","kaltsit","theresa","amiya","doctor","closure"] 
+      },
+      {
+        code: "DM-5",
+        title: "Banner",
+        operators: ["hoederer","ines","wuh","kaltsit","scout"]
+      },
+      {
+        code: "DM-6",
+        title: "Far Away",
+        operators: ["hoederer","ines","wuh","talulah"]
+      },
+      {
+        code: "DM-7",
+        title: "Cracked",
+        operators: ["hoederer","ines","doctor","scout","talulah"]
+      },
+      {
+        code: "DM-8",
+        title: "Separated",
+        operators: ["hoederer","ines","wuh","patriot","confessarius"]
+      },
+      {
+        code: "DM-ST-1",
+        title: "Beg for Mercy",
+        operators: ["wuh"]
       },
     ]
   }
